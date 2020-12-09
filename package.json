@@ -1,0 +1,15 @@
+{
+  "name": "sphinx_device",
+  "version": "1.0.0",
+  "description": "Generic sphinx secure device interface ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ax1/sphinx_device.git"
+  },
+  "author": "ax1",
+  "license": "PROPRIETARY"
+}
