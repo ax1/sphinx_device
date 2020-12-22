@@ -11,5 +11,9 @@
     "url": "https://github.com/ax1/sphinx_device.git"
   },
   "author": "ax1",
-  "license": "PROPRIETARY"
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "serialport": "^9.0.3"
+  }
 }
