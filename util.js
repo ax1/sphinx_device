@@ -1,6 +1,4 @@
 module.exports = { createPort, createPortSync }
-
-const fetch = require('node-fetch')
 const SerialPort = require('serialport')
 
 
