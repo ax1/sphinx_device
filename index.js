@@ -8,8 +8,9 @@ const ENDPOINT = "http://localhost:9090/sensors"
 util.createPortSync(USB_ADDRESS, BAUDRATE, processor)
 
 async function processor(data) {
+  data = data.replace("\r", "")
   console.log(data)
-  if (data.includes(' ')) return
+  if (data.includes(' ')) return //Device can also send log data
   try {
     console.log('sending msg to server: ' + data)
     await send(data)
