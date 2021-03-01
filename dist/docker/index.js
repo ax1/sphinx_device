@@ -1,6 +1,5 @@
 const fetch = require('node-fetch')
-const readline = require('readline')
-const { createReadStream } = require('fs')
+const { readFile } = require('fs').promises
 
 const ENDPOINT = "http://localhost:9090/sensors"
 
@@ -14,24 +13,11 @@ async function sleep(millis) {
 }
 
 async function main() {
-  const rl = readline.createInterface({
-    input: createReadStream('log.txt'),
-    /*output: process.stdout,
-    terminal: false*/
-  })
-
-  for await (const line of rl) {
+  const lines = (await readFile('log.txt', { encoding: 'utf-8' })).split('\n')
+  for (let line of lines) {
+    await sleep(1000)
     console.log(line)
-    rl.pause()
-    sleep(10000).then(() => rl.resume()).catch(() => rl.resume())
   }
-
-  // rl.on('line', async line => {
-  //   console.log(line)
-  //   rl.pause()
-  //   sleep(10000).then(() => rl.resume()).catch(() => rl.resume())
-  // })
-
 }
 
 main().catch(console.error)
