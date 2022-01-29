@@ -13,7 +13,7 @@ async function processor(data) {
   if (data.includes(' ')) return //Device can also send log data
   try {
     //console.log(data)
-    //await send(data)
+    await send(data)
   } catch (err) {
     console.error(err)
   }
